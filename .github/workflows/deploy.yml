@@ -32,14 +32,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # Astro's default build output directory
-          # For a personal site (yourusername.github.io), you typically publish to the 'main' or 'master' branch.
-          # For a project site (yourusername.github.io/your-repo-name/), you typically publish to the 'gh-pages' branch.
-          # If your repository is named 'yourusername.github.io', you should publish to 'main' or 'master'.
-          # If your repository is NOT named 'yourusername.github.io', then use 'gh-pages'.
-          publish_branch: main # Or 'master', depending on your default branch name
-```
-
-*   **`on: push: branches: - main`**: This tells GitHub Actions to run this workflow every time you push changes to your `main` branch.
-*   **`permissions: contents: write`**: This grants the necessary permissions for the action to push the built site to your GitHub Pages branch.
-*   **`publish_dir: ./dist`**: Astro builds your static site into the `dist` folder by default.
-*   **`publish_branch: main`**: For a personal GitHub Pages site (repository named `yourusername.github.io`), you need to publish the built content directly to the `main` (or `master`) branch. If it were a project page, you would typically publish to a `gh-pages` branch.
